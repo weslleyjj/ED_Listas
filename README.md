@@ -1,4 +1,4 @@
-# AulaED
+# Estruturas de Dados
 Projeto base para as aulas de estruturas de dados
 
 Utilize esse repositório se não quiser configurar um novo.
