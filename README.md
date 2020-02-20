@@ -12,6 +12,7 @@ Caso deseje criar um repositório do zero siga os seguintes passos:
 5) npm install --save-dev babel-jest @babel/core @babel/preset-env @babel/plugin-proposal-class-properties
 6) Crie o arquivo babel.config.js
 7) Adicione as informações abaixo no arquivo abel.config.js
+```
 module.exports = {
 	presets: [
 		[
@@ -25,5 +26,5 @@ module.exports = {
 	],
 	plugins: ["@babel/plugin-proposal-class-properties"]
 };
-
+```
 8)Para executar os testes digite npm test
