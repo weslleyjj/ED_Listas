@@ -11,7 +11,7 @@ Caso deseje criar um repositório do zero siga os seguintes passos:
 4) npm install --save-dev jest
 5) npm install --save-dev babel-jest @babel/core @babel/preset-env @babel/plugin-proposal-class-properties @types/jest
 6) Crie o arquivo babel.config.js
-7) Adicione as informações abaixo no arquivo abel.config.js
+7) Adicione as informações abaixo no arquivo babel.config.js
 ```
 module.exports = {
 	presets: [
