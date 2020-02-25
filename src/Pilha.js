@@ -8,9 +8,9 @@ class Pilha {
 
 	/**
 	 * Construtor padrão da classe Pilha.
-	 * @param {number} size - Tamanho da Pilha. Caso não informado a Pilha terá tamanho 10.
+	 * @param {number} [size = 10] - Tamanho da Pilha. Caso não informado a Pilha terá tamanho 10.
 	 */
-	constructor(size) {
+	constructor(size = 10) {
 		this.maxSize = size;
 		dados = [];
 		topo = -1;
