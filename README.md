@@ -64,11 +64,11 @@ Modifique o arquivo package.json para adicionar o script de criação de documen
 	},
 ```
 
-Para executar os testes digite
+Para executar os testes:
 ```
 npm test
 ```
-Para criar a documentação
+Para criar a documentação:
 ```
 npm run docs
 ```
