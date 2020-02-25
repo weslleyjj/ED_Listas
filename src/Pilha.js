@@ -12,8 +12,8 @@ class Pilha {
 	 */
 	constructor(size = 10) {
 		this.maxSize = size;
-		dados = [];
-		topo = -1;
+		this.dados = [];
+		this.topo = -1;
 	}
 
 	/**
@@ -33,6 +33,7 @@ class Pilha {
 	/**
 	 * Remove um elemento da Pilha.
 	 * @returns {any} - Retorna o elemento removido da Pilha.
+	 * @throws {Error} - Lança um erro de Underflow caso a pilha esteja vazia.
 	 */
 	pop() {
 		if (this.isEmpty()) {
@@ -45,6 +46,7 @@ class Pilha {
 	/**
 	 * Retorna o elemento no topo da Pilha sem remover.
 	 * @returns {any} - Elemento do topo da Pilha.
+	 * @throws {Error} - Lança um erro de Underflow caso a pilha esteja vazia.
 	 */
 	top() {
 		if (this.isEmpty()) {
