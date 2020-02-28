@@ -1,6 +1,5 @@
 import Pilha from "../src/Pilha";
 
-
 let p;
 
 beforeEach(() => {
