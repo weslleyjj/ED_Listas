@@ -78,7 +78,7 @@ test("fila aula", () => {
 	f.enqueue("E");
 	expect(() => {
 		f.enqueue("F");
-	}).toThrowError("Overflow");
+	}).toThrowError("Queue is full");
 	expect(f.dequeue()).toBe("A");
 	expect(f.dequeue()).toBe("B");
 	expect(f.dequeue()).toBe("C");
@@ -86,6 +86,6 @@ test("fila aula", () => {
 	expect(f.dequeue()).toBe("E");
 	expect(() => {
 		f.dequeue();
-	}).toThrowError("Underflow");
+	}).toThrowError("Queue is empty");
 	expect(f.size()).toBe(0);
 });
