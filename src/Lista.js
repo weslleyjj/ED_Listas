@@ -10,7 +10,6 @@ class Lista {
 		this.head = new Node(null);
 	}
 
-
 	add(dado) {
 		let novo_no = new Node(dado);
 
@@ -19,45 +18,42 @@ class Lista {
 	}
 
 	append(dado) {
-
 		let novo_no = new Node(dado);
 
-		if (this.head.proximo == null) {
+		if (this.isEmpty()) {
 			this.head.proximo = novo_no;
 		} else {
-			let atual = this.head.proximo;
-			while (atual.proximo != null) {
-				atual = atual.proximo;
+			let aux = this.head.proximo;
+			while (aux.proximo !== null) {
+				aux = aux.proximo;
 			}
-			atual.proximo = novo_no;
+			aux.proximo = novo_no;
 		}
 	}
 
 	removeBeginning() {
-
-		let atual = this.head.proximo;
-		if (atual === null) {
-			return;
+		if (this.isEmpty()) {
+			throw new Error("A lista está vazia.");
 		} else {
-			this.head.proximo = atual.proximo;
+			let aux = this.head.proximo;
+			this.head.proximo = aux.proximo;
 		}
-
 	}
 
 	removeEnd() {
-		let anterior = this.head;
-		let atual = this.head.proximo;
-
-		if (atual == null) {
-			return;
+		if (this.isEmpty()) {
+			throw new Error("A lista está vazia.");
 		}
 
-		while (atual.proximo != null) {
-			anterior = atual;
-			atual = atual.proximo;
+		let aux_a = this.head;
+		let aux_b = this.head.proximo;
+
+		while (aux_b.proximo !== null) {
+			aux_a = aux_b;
+			aux_b = aux_b.proximo;
 		}
-		atual = null;
-		anterior.proximo = null;
+		aux_b = null;
+		aux_a.proximo = null;
 	}
 
 	isEmpty() {
@@ -65,12 +61,12 @@ class Lista {
 	}
 
 	toString() {
-		let atual = this.head.proximo;
-		let texto = '';
+		let tmp = this.head.proximo;
+		let texto = "";
 
-		while (atual != null) {
-			texto += atual.dado + (atual.proximo ? '->' : '');
-			atual = atual.proximo;
+		while (tmp !== null) {
+			texto += tmp.dado + (tmp.proximo ? "->" : "");
+			tmp = tmp.proximo;
 		}
 
 		return texto;
@@ -78,17 +74,16 @@ class Lista {
 
 	size() {
 		let cont = 0;
-		let atual = this.head.proximo;
+		let tmp = this.head.proximo;
 
-		while (atual != null) {
-			atual = atual.proximo;
+		while (tmp !== null) {
+			tmp = tmp.proximo;
 			cont++;
 		}
 		return cont;
 	}
 
 	addAt(posicao, dado) {
-
 		if (posicao >= this.size()) {
 			//adicionando no final
 			this.append(dado);
@@ -100,70 +95,65 @@ class Lista {
 				let novo_no = new Node(dado);
 				let i = 0;
 
-				let anterior = this.head;
-				let atual = this.head.proximo;
+				let aux_a = this.head;
+				let aux_b = this.head.proximo;
 
 				while (i != posicao) {
 					//iteração
-					anterior = atual;
-					atual = atual.proximo;
+					aux_a = aux_b;
+					aux_b = aux_b.proximo;
 					i++;
 				}
-				anterior.proximo = novo_no;
-				novo_no.proximo = atual;
+				aux_a.proximo = novo_no;
+				novo_no.proximo = aux_b;
 			}
-
 		}
 	}
 
 	search(dado) {
-
-		if (this.head.proximo == null) {
+		if (this.isEmpty()) {
 			return false;
 		} else {
-			let atual = this.head.proximo;
-			while (atual != null) {
-				if (atual.dado == dado) {
+			let tmp = this.head.proximo;
+			while (tmp !== null) {
+				if (tmp.dado === dado) {
 					return true;
 				}
 				//iteração
-				atual = atual.proximo;
+				tmp = tmp.proximo;
 			}
 			return false;
 		}
 	}
 
 	addInOrder(dado) {
-
 		//NOTA: Essa função deve ser usada apenas se os elementos já existentes
 		//na lista estiverem em ordem crescente.
 
 		let novo_no = new Node(dado);
 
-		if (this.head.proximo == null) {
+		if (this.isEmpty()) {
 			this.head.proximo = novo_no;
 		} else {
+			let aux_a = this.head;
+			let aux_b = this.head.proximo;
 
-			let anterior = this.head;
-			let atual = this.head.proximo;
-
-			while (atual != null) {
-				if (atual.dado > dado) {
-					anterior.proximo = novo_no;
-					novo_no.proximo = atual;
+			while (aux_b != null) {
+				if (aux_b.dado > dado) {
+					aux_a.proximo = novo_no;
+					novo_no.proximo = aux_b;
 					return;
 				}
 				//iteração
-				anterior = atual;
-				atual = atual.proximo;
+				aux_a = aux_b;
+				aux_b = aux_b.proximo;
 			}
 
 			//caso o if nunca seja true
-			anterior.proximo = novo_no;
+			aux_a.proximo = novo_no;
 			novo_no.proximo = null;
 			return;
 		}
-
 	}
 }
 

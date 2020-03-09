@@ -81,9 +81,7 @@ class FilaCircular {
 	}
 
 	getNextEndPosition() {
-		return this.fim === this.tamanho - 1 && this.inicio !== 0
-			? 0
-			: this.fim + 1;
+		return this.fim === this.tamanho - 1 && this.inicio !== 0 ? 0 : this.fim + 1;
 	}
 
 	getNextBeginPosition() {

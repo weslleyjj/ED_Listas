@@ -108,3 +108,6 @@ dist
 
 # Arquivos de documentação
 /docs
+
+/__tests__/Conjunto.test.js
+/src/Conjunto.js
