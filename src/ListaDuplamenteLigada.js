@@ -54,6 +54,31 @@ class ListaDuplamenteLigada {
 	}
 
 	remove(dado) {
+		if (!this.isEmpty()) {
+			let current = this.head;
+			let next = this.head.proximo;
+			let last = this.tail;
+
+			if (current.dado === dado) {
+				return this.removeBeginning();
+			} else if (last.dado === dado) {
+				return this.removeEnd();
+			} else {
+				while (next != null) {
+					if (next.dado === dado) {
+						aux = next.proximo;
+						current.proximo = next.proximo;
+						aux.anterior = current;
+						return true;
+					}
+					//iteração
+					current = next;
+					next = next.proximo;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	removeEnd() {
@@ -119,6 +144,18 @@ class ListaDuplamenteLigada {
 				aux_b.anterior = novo_no;
 			}
 		}
+	}
+
+	asArray() {
+		let current = this.head;
+		let dados = [];
+
+		while (current != null) {
+			dados.push(current.dado);
+			current = current.proximo;
+		}
+
+		return dados;
 	}
 
 	search(dado) {
