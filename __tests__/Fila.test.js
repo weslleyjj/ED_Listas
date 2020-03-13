@@ -89,3 +89,11 @@ test("fila aula", () => {
 	}).toThrowError("Queue is empty");
 	expect(f.size()).toBe(0);
 });
+
+test("toString", ()=> {
+	f.enqueue("A")
+	f.enqueue("B")
+	f.enqueue("C")
+
+	expect(f.toString()).toBe("[A, B, C, ]")
+})
