@@ -1,7 +1,13 @@
 
 /**
- * Implementação de uma Pilha
+ * Conjunto ordenado de dados, no qual os dados podem ser inseridos ou removidos a partir de uma extremidade chamada topo da pilha.
+ * Uma pilha é uma estrutura de dados em que o acesso é restrito ao elemento mais recente que fica no topo da pilha adotando o método Last-In, First-Out – LIFO, “o último a entrar é o primeiro a sair”. 
+ * As principais funções para implementar uma pilha são: 
+ * PUSH: Insere um dado no topo da pilha.
+ * POP: Remove um dado do topo da pilha.
+ * ISEMPTY: Verifica se uma pilha está vazia.
  * @author {https://github.com/taniro}
+ * @license
  */
 
 class Pilha {
@@ -17,7 +23,7 @@ class Pilha {
 	}
 
 	/**
-	 * Adiciona um elemento na Pilha.
+	 * Função para adicionar elementos na pilha. Para evitar problemas é realizado um teste para verificar se a pilha está cheia (stack overflow).
 	 * @param {any} newData - Elemento a ser adicionado à Pilha.
 	 * @throws {Error} - Lança um erro de Overflow caso a pilha esteja cheia.
 	 */
@@ -31,7 +37,7 @@ class Pilha {
 	}
 
 	/**
-	 * Remove um elemento da Pilha.
+	 * Função para remover o elemento do topo da pilha. Para evitar problemas é realizado um teste para verificar se a pilha está vazia (stack underlow).
 	 * @returns {any} - Retorna o elemento removido da Pilha.
 	 * @throws {Error} - Lança um erro de Underflow caso a pilha esteja vazia.
 	 */
@@ -44,7 +50,7 @@ class Pilha {
 	}
 
 	/**
-	 * Retorna o elemento no topo da Pilha sem remover.
+	 * Função que retorna o elemento no topo da pilha.
 	 * @returns {any} - Elemento do topo da Pilha.
 	 * @throws {Error} - Lança um erro de Underflow caso a pilha esteja vazia.
 	 */
@@ -57,7 +63,8 @@ class Pilha {
 	}
 
 	/**
-	 * Remove todos os elementos da Pilha.
+	 * Função que remove todos os elementos da Pilha. Note que a implementação apenas altera a posição do topo.
+	 * Dessa forma, os dados estarão excluidos logicamente da pilha. Essa é uma implementação que visa otimizar o funcionamento da pilha.
 	 */
 	clear() {
 		this.topo = -1;
