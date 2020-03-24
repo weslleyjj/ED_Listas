@@ -91,9 +91,10 @@ class Conjunto {
 	isSubSet(anotherset) {
 		let arraydadosA = this.values();
 		let arraydadosB = anotherset.values();
+		let fazparte;
 
 		for (let i = 0; i < arraydadosB.length; i++) {
-			let fazparte = false;
+			fazparte = false;
 			for (let j = 0; j < arraydadosA.length; j++) {
 				if (arraydadosB[i] === arraydadosA[j]) {
 					fazparte = true;

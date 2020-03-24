@@ -26,10 +26,8 @@ class ListaDuplamenteLigada {
 			this.head = novo_no;
 		}
 	}
-
 	append(dado) {
 		let novo_no = new Node(dado);
-
 		if (this.isEmpty()) {
 			this.head = novo_no;
 			this.tail = novo_no;
@@ -38,7 +36,6 @@ class ListaDuplamenteLigada {
 		} else {
 			novo_no.proximo = null;
 			novo_no.anterior = this.tail;
-
 			this.tail.proximo = novo_no;
 			this.tail = novo_no;
 		}
@@ -46,9 +43,9 @@ class ListaDuplamenteLigada {
 
 	removeBeginning() {
 		if (!this.isEmpty()) {
-			let tmp = this.head.proximo;
+			//let tmp = this.head.proximo;
 
-			this.head = tmp;
+			this.head = this.head.proximo;
 			this.head.anterior = null;
 		}
 	}
@@ -58,6 +55,7 @@ class ListaDuplamenteLigada {
 			let current = this.head;
 			let next = this.head.proximo;
 			let last = this.tail;
+			let aux;
 
 			if (current.dado === dado) {
 				return this.removeBeginning();
@@ -83,9 +81,8 @@ class ListaDuplamenteLigada {
 
 	removeEnd() {
 		if (!this.isEmpty()) {
-			let tmp = this.tail.anterior;
-
-			this.tail = tmp;
+			//let tmp = this.tail.anterior;
+			this.tail = this.tail.anterior;
 			this.tail.proximo = null;
 		}
 	}
@@ -159,7 +156,7 @@ class ListaDuplamenteLigada {
 	}
 
 	search(dado) {
-		if (this.head === null) {
+		if (this.isEmpty()) {
 			return false;
 		} else {
 			let tmp = this.head;

@@ -21,6 +21,6 @@ test("Adição de um elemento", () => {
 	expect(c.size()).toBe(3);
 	c.delete("A");
 	expect(c.size()).toBe(2);
-	expect(c.values()).toStrictEqual(['C', 'B']);
-	expect(c.delete('F')).toBe(false);
+	expect(c.values()).toStrictEqual(["C", "B"]);
+	expect(c.delete("F")).toBe(false);
 });
