@@ -7,7 +7,7 @@
  * POP: Remove um dado do topo da pilha.
  * ISEMPTY: Verifica se uma pilha está vazia.
  * @author {https://github.com/taniro}
- * @license
+ * @license {https://github.com/taniro/AulaED/blob/master/LICENSE}
  */
 
 class Pilha {
