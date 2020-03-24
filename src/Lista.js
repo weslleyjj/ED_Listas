@@ -1,4 +1,17 @@
+/**
+ * Implementação de uma Lista simplesmente encadeada
+ * @author {https://github.com/taniro}
+ */
+
+
+
+
 class Node {
+	
+	/**
+  	* Construtor do nós que serão usados no decorrer da Lista
+  	* @param {any} - Elemento inserido no nó
+  	*/
 	constructor(dado) {
 		this.dado = dado;
 		this.proximo = null;
@@ -6,10 +19,18 @@ class Node {
 }
 
 class Lista {
+
+	/**
+	 * Construtor da Lista simplesmente encadeada
+	 */
 	constructor() {
 		this.head = new Node(null);
 	}
 
+	/**
+	 * Insere um novo Nó no inicio da Lista
+	 * @param {any} [dado] - Novo elemento que será inserido na Lista por meio de um Nó 
+	 */
 	add(dado) {
 		let novo_no = new Node(dado);
 
@@ -17,6 +38,10 @@ class Lista {
 		this.head.proximo = novo_no;
 	}
 
+	/**
+	 * Insere um novo Nó no final da Lista
+	 * @param {any} [dado] - Novo elemento que será inserido na Lista por meio de um Nó 
+	 */
 	append(dado) {
 		let novo_no = new Node(dado);
 
@@ -31,6 +56,10 @@ class Lista {
 		}
 	}
 
+	/**
+	 * Remove o Nó que se encontra no começo da Lista
+	 * @throws {Error} - Será lançado um novo erro caso a Lista esteja vazia
+	 */
 	removeBeginning() {
 		if (this.isEmpty()) {
 			throw new Error("A lista está vazia.");
@@ -40,6 +69,10 @@ class Lista {
 		}
 	}
 
+	/**
+	 * Remove o Nó que se encontra no final da Lista
+	 * @throws {Error} - Será lançado um novo erro caso a Lista esteja vazia
+	 */
 	removeEnd() {
 		if (this.isEmpty()) {
 			throw new Error("A lista está vazia.");
@@ -56,10 +89,18 @@ class Lista {
 		aux_a.proximo = null;
 	}
 
+	/**
+	 * Verifica se a Lista está vazia ou não
+	 * @returns {boolean} - Retorna [true] para Lista vazia
+	 */
 	isEmpty() {
 		return this.head.proximo === null;
 	}
 
+	/**
+	 * Retorna a Lista em formato de String
+	 * @returns {string} - Lista em String
+	 */
 	toString() {
 		let tmp = this.head.proximo;
 		let texto = "";
@@ -72,6 +113,10 @@ class Lista {
 		return texto;
 	}
 
+	/**
+	 * O tamanho da Lista
+	 * @returns {number} - Retorna o tamanho da Lista
+	 */
 	size() {
 		let cont = 0;
 		let tmp = this.head.proximo;
@@ -83,6 +128,11 @@ class Lista {
 		return cont;
 	}
 
+	/**
+	 * Insere um novo Nó em uma posição específica da Lista
+	 * @param {number} [posicao] - Posição que desejá inserir o novo Nó 
+	 * @param {any} [dado] - Novo Nó que será inserido na Lista
+	 */
 	addAt(posicao, dado) {
 		if (posicao >= this.size()) {
 			//adicionando no final
@@ -109,7 +159,11 @@ class Lista {
 			}
 		}
 	}
-
+	/**
+	 * Procura um dado específico na Lista
+	 * @param {any} [dado] - Dado que será procurado na Lista
+	 * @returns {boolean} - Retorn [true] se o dado for encontrado e [false] se o dado não existir
+	 */
 	search(dado) {
 		if (this.isEmpty()) {
 			return false;
@@ -126,9 +180,14 @@ class Lista {
 		}
 	}
 
+	/**
+	 * 
+	 * @param {any} [dado] - Novo nó que será inserido em ordem crescente
+	 *  
+	 * NOTA: Essa função deve ser usada apenas se os elementos já existentes
+	 * na lista estiverem em ordem crescente.
+	 */
 	addInOrder(dado) {
-		//NOTA: Essa função deve ser usada apenas se os elementos já existentes
-		//na lista estiverem em ordem crescente.
 
 		let novo_no = new Node(dado);
 
