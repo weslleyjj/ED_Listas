@@ -71,7 +71,7 @@ class Pilha {
 	}
 
 	/**
-	 * Retorna o tamanho da Pilha.
+	 * Função para obter o tamanho atual da Pilha.
 	 * @returns {number} - Tamanho da Pilha.
 	 */
 	size() {
@@ -79,7 +79,7 @@ class Pilha {
 	}
 
 	/**
-	 * Verifica que uma Pilha é vazia.
+	 * Função para verificar se a Pilha está vazia.
 	 * @returns {boolean} - Retorna [true] se a Pilha estiver vazia, [false] caso contrário.
 	 */
 	isEmpty() {
@@ -87,7 +87,7 @@ class Pilha {
 	}
 
 	/**
-	 * Verifica que uma Pilha é cheia.
+	 * Função para verificar se a Pilha está cheia.
 	 * @returns {boolean} - Retorna [true] se a Pilha estiver cheia, [false] caso contrário.
 	 */
 	isFull() {
