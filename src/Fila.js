@@ -69,11 +69,13 @@ class Fila {
 	toString() {
 		let resultado = "["
 
-		for(let i = 0; i< this.inicio; i++) resultado += `${this.dados[i]}, `
+		for (let i = 0; i < this.fim; i++) {
+			resultado += `${this.dados[i]}, `;
+		}
 
 		resultado += "]"
 
-		return resultado
+		return resultado;
 	}
 
 	/**

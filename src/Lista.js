@@ -7,7 +7,7 @@
 
 
 class Node {
-	
+
 	/**
   	* Construtor do nós que serão usados no decorrer da Lista
   	* @param {any} - Elemento inserido no nó
@@ -71,6 +71,7 @@ class Lista {
 
 	/**
 	 * Remove o Nó que se encontra no final da Lista
+	 * @returns {any} - Retorna o conteúdo do nó removido.
 	 * @throws {Error} - Será lançado um novo erro caso a Lista esteja vazia
 	 */
 	removeEnd() {
@@ -85,8 +86,27 @@ class Lista {
 			aux_a = aux_b;
 			aux_b = aux_b.proximo;
 		}
-		aux_b = null;
 		aux_a.proximo = null;
+		return aux_b.dado;
+	}
+
+	/**
+	 * Retorna os dados do último nó da lista
+	 * @throws {Error} - Será lançado um novo erro caso a Lista esteja vazia
+	 */
+	last() {
+		if (this.isEmpty()) {
+			throw new Error("A lista está vazia.");
+		}
+
+		let aux_a = this.head;
+		let aux_b = this.head.proximo;
+
+		while (aux_b.proximo !== null) {
+			aux_a = aux_b;
+			aux_b = aux_b.proximo;
+		}
+		return aux_b.dado;
 	}
 
 	/**
@@ -213,6 +233,12 @@ class Lista {
 			novo_no.proximo = null;
 			return;
 		}
+	}
+	/**
+	 * remove todos os dados da lista.
+	 */
+	clear() {
+		this.head = new Node(null);
 	}
 }
 

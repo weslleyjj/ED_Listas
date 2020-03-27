@@ -70,7 +70,7 @@ class ListaDuplamenteLigada {
 	}
 
 	/**
-	 * Remove o Nó que se encontra no começo da Lista
+	 * Remove o Nó que se encontra no começo da Lista.
 	 * 
 	 */
 	removeBeginning() {
