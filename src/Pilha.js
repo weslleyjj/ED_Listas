@@ -1,11 +1,12 @@
 
 /**
- * Conjunto ordenado de dados, no qual os dados podem ser inseridos ou removidos a partir de uma extremidade chamada topo da pilha.
- * Uma pilha é uma estrutura de dados em que o acesso é restrito ao elemento mais recente que fica no topo da pilha adotando o método Last-In, First-Out – LIFO, “o último a entrar é o primeiro a sair”. 
- * As principais funções para implementar uma pilha são: 
+ * Conjunto ordenado de dados no qual os elementos podem ser inseridos ou removidos a partir de uma extremidade chamada de topo.
+ * Uma pilha é uma estrutura de dados em que o acesso é restrito ao elemento recentemente adicionado.
+ * É possível dizer que uma pilha é um tipo abstrato de dados baseado no princípio de Last-In, First-Out – LIFO, “o último a entrar é o primeiro a sair”. 
+ * As principais operações para implementar uma pilha são: 
  * PUSH: Insere um dado no topo da pilha.
  * POP: Remove um dado do topo da pilha.
- * PEEK: Retorna o topo da pilha.
+ * TOP: Retorna o topo da pilha.
  * ISEMPTY: Verifica se uma pilha está vazia.
  * @author {https://github.com/taniro}
  * @license {https://github.com/taniro/AulaED/blob/master/LICENSE}
@@ -24,7 +25,9 @@ class Pilha {
 	}
 
 	/**
-	 * Função para adicionar elementos na pilha. Para evitar problemas é realizado um teste para verificar se a pilha está cheia (stack overflow).
+	 * Adicionar um elemento na pilha.
+	 * Todo elemento deverá ser adicionado no topo da pilha.
+	 * Para evitar problemas é realizado um teste para verificar se a pilha está cheia (stack overflow).
 	 * @param {any} newData - Elemento a ser adicionado à Pilha.
 	 * @throws {Error} - Lança um erro de Overflow caso a pilha esteja cheia.
 	 */
@@ -38,7 +41,9 @@ class Pilha {
 	}
 
 	/**
-	 * Função para remover o elemento do topo da pilha. Para evitar problemas é realizado um teste para verificar se a pilha está vazia (stack underlow).
+	 * Remover um elemento da pilha.
+	 * Todo elemento deverá ser removido do topo da pilha
+	 * Para evitar problemas é realizado um teste para verificar se a pilha está vazia (stack underlow).
 	 * @returns {any} - Retorna o elemento removido da Pilha.
 	 * @throws {Error} - Lança um erro de Underflow caso a pilha esteja vazia.
 	 */
