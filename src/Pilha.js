@@ -5,6 +5,7 @@
  * As principais funções para implementar uma pilha são: 
  * PUSH: Insere um dado no topo da pilha.
  * POP: Remove um dado do topo da pilha.
+ * PEEK: Retorna o topo da pilha.
  * ISEMPTY: Verifica se uma pilha está vazia.
  * @author {https://github.com/taniro}
  * @license {https://github.com/taniro/AulaED/blob/master/LICENSE}
