@@ -39,11 +39,11 @@ module.exports = {
 
 Edite o arquivo packege.json e altere a propriedade "scripts" para:
 
-'''
+```
 "scripts": {
 	"test": "jest"
 },
-'''
+```
 
 Para preparar o ambiente para criação de documentação execute o seguinte comando:
 ```
