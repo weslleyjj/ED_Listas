@@ -6,14 +6,14 @@ class Questao1{
     }
 
     multiplicar(fracao1, fracao2){
-        result = new Questao1();
+        let result = new Questao1();
         result.numerador = fracao1.numerador * fracao2.numerador;
         result.denominador = fracao1.denominador * fracao2.denominador;
         return result;
     }
 
     dividir(fracao1, fracao2){
-        result = new Questao1();
+        let result = new Questao1();
         result.numerador = fracao1.numerador * fracao2.denominador;
         result.denominador = fracao1.denominador * fracao2.numerador;
         return result;
