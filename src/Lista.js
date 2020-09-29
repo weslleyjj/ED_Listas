@@ -61,12 +61,15 @@ class Lista {
 	 * @throws {Error} - Será lançado um novo erro caso a Lista esteja vazia
 	 */
 	removeBeginning() {
+		let res;
 		if (this.isEmpty()) {
 			throw new Error("A lista está vazia.");
 		} else {
 			let aux = this.head.proximo;
+			res = aux.dado;
 			this.head.proximo = aux.proximo;
 		}
+		return res;
 	}
 
 	/**
