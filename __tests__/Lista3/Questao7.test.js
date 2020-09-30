@@ -9,6 +9,4 @@ test("josephus problem", () => {
     expect(Questao7(10, 3)).toBe(4);
     expect(Questao7(14, 5)).toBe(11);
     expect(Questao7(15, 4)).toBe(13);
-
-
 });
