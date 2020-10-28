@@ -1,0 +1,5 @@
+Limite assintótico superior do pior caso:F(n) = 6 + v + s + (7*(M*L)) + E-e + D-d
+
+Limite assintótico superior do melhor caso: F(n) = 6 + v + s + (7 * (M*l))
+
+Código está comentado com o valor das operações.
